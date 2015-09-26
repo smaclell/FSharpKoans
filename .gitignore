@@ -4,6 +4,5 @@ FSharpKoans/bin/
 FSharpKoans/obj/
 FSharpKoans.Test/bin/
 FSharpKoans.Test/obj/
-FSharpKoans2008.suo
-FSharpKoans2010.suo
+*.suo
 packages/
