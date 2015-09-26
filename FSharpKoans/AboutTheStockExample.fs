@@ -58,8 +58,23 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
+
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+        let selector (r:string[]) =
+             let start = System.Double.Parse( r.[1] )
+             let close = System.Double.Parse( r.[4] )
+             let diff = (start - close)
+             abs diff
+
+        let splitter (x:string) =
+            x.Split( [| ',' |] )
+
+        let max =
+            stockData
+            |> Seq.skip 1
+            |> Seq.map splitter
+            |> Seq.maxBy selector
+        let result = max.[0]
         
         AssertEquality "2012-03-13" result
